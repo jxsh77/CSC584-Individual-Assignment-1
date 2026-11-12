@@ -1,5 +1,7 @@
 SITI JASHNITHA BINTI ABDUL AZIZ
+
 STUDENT ID: 2025143263
+
 CSC584 Individual Assignment 1
 
 Personal Profile Web Application
