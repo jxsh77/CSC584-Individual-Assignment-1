@@ -1,0 +1,645 @@
+
+/* =====================================
+   1. COLOUR PALETTE AND GENERAL STYLE
+===================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+    --paper: #fcf9fa;
+    --white: #ffffff;
+    --ink: #30272c;
+    --muted: #81747a;
+    --pink: #d987a5;
+    --pink-dark: #b96585;
+    --pink-soft: #f7e8ee;
+    --line: #eee3e8;
+    --shadow: 0 22px 65px rgba(91, 52, 69, 0.09);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.65;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.section-shell {
+    width: min(1100px, calc(100% - 48px));
+    margin: auto;
+}
+
+
+/* =====================================
+   2. NAVIGATION BAR
+===================================== */
+
+.site-header {
+    width: min(1160px, calc(100% - 48px));
+    margin: auto;
+    min-height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.brand {
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+}
+
+.brand span,
+.accent-text {
+    color: var(--pink-dark);
+}
+
+nav {
+    display: flex;
+    gap: 32px;
+    color: var(--muted);
+    font-size: .83rem;
+}
+
+nav a {
+    transition: color .2s ease;
+}
+
+nav a:hover {
+    color: var(--pink-dark);
+}
+
+
+/* =====================================
+   3. HERO SECTION
+===================================== */
+
+.hero {
+    min-height: 650px;
+
+    display: grid;
+    grid-template-columns: 1.12fr .88fr;
+    align-items: center;
+
+    gap: 60px;
+    position: relative;
+
+    padding-top: 65px;
+    padding-bottom: 100px;
+}
+
+.eyebrow {
+    color: var(--pink-dark);
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+}
+
+.hello {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    margin: 24px 0 0;
+}
+
+h1,
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    line-height: 1.12;
+}
+
+h1 {
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    letter-spacing: -.055em;
+    margin: 8px 0 20px;
+}
+
+.hero-description {
+    font-size: 1.08rem;
+    max-width: 470px;
+}
+
+.hero-note {
+    color: var(--muted);
+    font-size: .91rem;
+    max-width: 490px;
+    margin-top: 18px;
+}
+
+
+/* =====================================
+   4. BUTTONS
+===================================== */
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    margin-top: 32px;
+}
+
+.button {
+    border: 0;
+    border-radius: 999px;
+    padding: 13px 21px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+
+    font: 600 .82rem 'DM Sans', sans-serif;
+    cursor: pointer;
+
+    transition: transform .25s ease,
+                box-shadow .25s ease,
+                background .25s ease;
+}
+
+.button-primary {
+    color: white;
+    background: var(--pink-dark);
+    box-shadow: 0 9px 22px rgba(185, 101, 133, .2);
+}
+
+.button-primary:hover {
+    transform: translateY(-3px);
+    background: #a95375;
+    box-shadow: 0 13px 28px rgba(185, 101, 133, .27);
+}
+
+.text-link {
+    font-size: .82rem;
+    font-weight: 600;
+    border-bottom: 1px solid #d9a6b9;
+    padding-bottom: 4px;
+}
+
+.text-link:hover {
+    color: var(--pink-dark);
+}
+
+
+/* =====================================
+   5. PROFILE PHOTOGRAPH
+===================================== */
+
+.hero-visual {
+    min-height: 430px;
+    position: relative;
+
+    display: grid;
+    place-items: center;
+}
+
+.photo-frame {
+    width: min(350px, 85%);
+    height: 460px;
+
+    background: #f3dce5;
+    border-radius: 170px 170px 22px 22px;
+
+    padding: 14px;
+    position: relative;
+
+    transform: rotate(1deg);
+    box-shadow: var(--shadow);
+}
+
+.photo-placeholder {
+    height: 100%;
+    overflow: hidden;
+    background: #ff8736;
+
+    border: 1px solid rgba(185, 101, 133, .24);
+    border-radius: 160px 160px 14px 14px;
+}
+
+.photo-placeholder img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center bottom;
+
+    background: #ff8736;
+}
+
+.photo-caption {
+    position: absolute;
+    right: -42px;
+    bottom: 36px;
+
+    background: white;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+
+    border-radius: 12px;
+    padding: 13px 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: .68rem;
+    line-height: 1.5;
+
+    transform: rotate(-2deg);
+}
+
+.caption-mark {
+    color: var(--pink-dark);
+    font-size: 1.5rem;
+}
+
+
+/* =====================================
+   6. FLOATING DECORATIONS
+===================================== */
+
+.decor {
+    position: absolute;
+    color: var(--pink-dark);
+}
+
+.decor-one {
+    top: 28px;
+    right: 40px;
+    font-size: 2rem;
+    animation: float 4s ease-in-out infinite;
+}
+
+.decor-two {
+    top: 100px;
+    left: 12px;
+    font-size: 2.3rem;
+    animation: float 5s ease-in-out infinite reverse;
+}
+
+.decor-three {
+    bottom: 38px;
+    left: 20px;
+
+    font: 600 1rem monospace;
+    background: white;
+    padding: 10px 13px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* =====================================
+   7. SCROLL INDICATOR
+===================================== */
+
+.scroll-cue {
+    position: absolute;
+    bottom: 34px;
+    left: 0;
+
+    color: #a3949b;
+    font-size: .62rem;
+    letter-spacing: .16em;
+}
+
+.scroll-cue span {
+    color: var(--pink-dark);
+    margin-left: 9px;
+    font-size: 1rem;
+}
+
+
+/* =====================================
+   8. ABOUT ME SECTION
+===================================== */
+
+.about-section {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+
+    padding: 105px 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+}
+
+h2 {
+    font-size: clamp(2.7rem, 5vw, 4.2rem);
+    margin: 14px 0;
+    letter-spacing: -.04em;
+}
+
+.about-copy {
+    align-self: center;
+    max-width: 470px;
+    color: #62565c;
+}
+
+.muted-copy {
+    color: var(--pink-dark);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.12rem;
+}
+
+.about-tagline {
+    color: var(--pink-dark);
+    font-size: 1.3rem;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-top: 24px;
+}
+
+
+/* =====================================
+   9. PERSONAL PROFILE FORM
+===================================== */
+
+.form-section {
+    padding: 110px 0;
+
+    display: grid;
+    grid-template-columns: .72fr 1.28fr;
+    gap: 70px;
+
+    align-items: start;
+}
+
+.form-intro > p:not(.eyebrow) {
+    color: var(--muted);
+    max-width: 270px;
+}
+
+.profile-form {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+
+    padding: 32px;
+    box-shadow: var(--shadow);
+}
+
+.form-topline {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+
+    font-size: .66rem;
+    font-weight: 700;
+    letter-spacing: .13em;
+}
+
+.required-note {
+    color: #a3949b;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.field-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 21px 18px;
+
+    padding: 25px 0;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+label {
+    font-size: .76rem;
+    font-weight: 600;
+}
+
+label span {
+    color: var(--pink-dark);
+}
+
+input,
+textarea {
+    width: 100%;
+
+    border: 1px solid #eadfe4;
+    border-radius: 10px;
+
+    padding: 12px 13px;
+    background: #fdfbfc;
+    color: var(--ink);
+
+    font: .82rem 'DM Sans', sans-serif;
+    outline: none;
+
+    transition: border .2s, box-shadow .2s;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 135px;
+    line-height: 1.65;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--pink);
+    box-shadow: 0 0 0 3px rgba(217, 135, 165, .13);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #b5a8ae;
+}
+
+.submit-button {
+    margin-top: 2px;
+}
+
+.form-footnote {
+    color: #a3949b;
+    font-size: .68rem;
+    margin: 13px 0 0;
+}
+
+
+/* =====================================
+   10. FOOTER
+===================================== */
+
+.site-footer {
+    border-top: 1px solid var(--line);
+
+    min-height: 100px;
+
+    width: min(1160px, calc(100% - 48px));
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+
+    color: #a3949b;
+    font-size: .68rem;
+}
+
+.site-footer .brand {
+    color: var(--ink);
+}
+
+
+/* =====================================
+   11. SCROLL REVEAL ANIMATION
+===================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(22px);
+
+    transition: opacity .7s ease,
+                transform .7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =====================================
+   12. RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 760px) {
+
+    .site-header {
+        min-height: 70px;
+    }
+
+    nav {
+        gap: 14px;
+        font-size: .72rem;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding-top: 65px;
+    }
+
+    .hero-visual {
+        min-height: 390px;
+    }
+
+    .about-section,
+    .form-section {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 75px 0;
+    }
+
+    .profile-form {
+        padding: 22px;
+    }
+
+    .site-footer {
+        flex-wrap: wrap;
+        padding: 25px 0;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .section-shell,
+    .site-header,
+    .site-footer {
+        width: min(100% - 32px, 1100px);
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: .66rem;
+    }
+
+    .field-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .form-topline {
+        font-size: .58rem;
+    }
+
+    .photo-caption {
+        right: -15px;
+    }
+}
+
+
+/* =====================================
+   13. ACCESSIBILITY
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+    
+    
+}
