@@ -56,16 +56,16 @@ How to Run
 Screenshots
 
 1. Homepage
-
+![Homepage](screenshots/01-homepage.jpg)
 
 
 2. About Me Section
-
+![About Me](screenshots/02-about-me.jpg)
 
 
 3. Personal Profile Form
-
+![Profile Form](screenshots/03-profile-form.jpg)
 
 
 4. Submitted Profile Result
-
+![Profile Result](screenshots/04-profile-result.jpg)
